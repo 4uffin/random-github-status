@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status Operation Center</title>
     <style>
+        /* Early 2000s tech aesthetic / Minimalist dashboard styles */
         :root {
-            --bg-color: #f0f4f8;
+            --bg-color: #f0f4f8; /* Muted light blue per Shuffle preference */
             --text-color: #222;
             --accent-color: #0056b3;
             --border-color: #ccc;
@@ -21,6 +22,7 @@
             padding: 20px;
             margin: 0;
         }
+        /* Fixed-width layout for desktop focus */
         .container {
             width: 100%;
             max-width: 800px;
@@ -104,28 +106,33 @@
             </tr>
         </thead>
         <tbody id="history-body">
-            <tr><td colspan="2">Fetching data from GitHub...</td></tr>
+            <tr><td colspan="2">Fetching live stats from GitHub...</td></tr>
         </tbody>
     </table>
     <footer>
-        <p>Vibe-coded via Gemini 3 Fast • Data sourced from stats.json</p>
+        <p>Vibe-coded via Gemini 3 Fast • Powered by raw content fetching</p>
     </footer>
 </div>
 <script>
     const USERNAME = '4uffin';
     const REPO = 'random-github-status';
+    // Fetches the raw JSON content from the main branch
     const DATA_URL = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/stats.json`;
 
     async function fetchStats() {
         const historyBody = document.getElementById('history-body');
         try {
             const response = await fetch(DATA_URL);
-            if (!response.ok) throw new Error('Could not reach stats.json');
+            if (!response.ok) throw new Error('API unreachable or repo private');
             const data = await response.json();
+            
+            // Map JSON data to DOM elements
             document.getElementById('total-attempts').innerText = data.total_attempts;
             document.getElementById('success-count').innerText = data.success_count;
             document.getElementById('error-rate').innerText = data.error_rate_percent;
             document.getElementById('last-updated').innerText = `Last System Run: ${data.last_run}`;
+            
+            // Populate the history table
             historyBody.innerHTML = '';
             data.history.forEach(item => {
                 const row = document.createElement('tr');
@@ -133,9 +140,11 @@
                 historyBody.appendChild(row);
             });
         } catch (err) {
-            historyBody.innerHTML = `<tr><td colspan="2" style="color:red">Error: ${err.message}.</td></tr>`;
+            historyBody.innerHTML = `<tr><td colspan="2" style="color:red">Error syncing dashboard: ${err.message}.</td></tr>`;
         }
     }
+
+    // Initial fetch and 5-minute auto-refresh cycle
     fetchStats();
     setInterval(fetchStats, 300000);
 </script>
