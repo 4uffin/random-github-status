@@ -2,20 +2,20 @@ name: Automate GitHub Status
 
 on:
   schedule:
-    - cron: '0 * * * *' # Executes at the start of every hour
-  workflow_dispatch: # Allows manual trigger via the Actions tab
+    - cron: '0 * * * *' # Triggers at the top of every hour
+  workflow_dispatch: # Allows manual trigger from the GitHub UI
 
 jobs:
   update-status:
     runs-on: ubuntu-latest
-    timeout-minutes: 5 # Safety cutoff to prevent hung processes
+    timeout-minutes: 5 # Prevents a hung process from draining Actions minutes
     permissions:
-      contents: write # Required for the bot to commit stats back to the repo
+      contents: write # Essential for the bot to commit stats.json and last_status.txt
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetches full history for robust rebasing
+          fetch-depth: 0 # Fetches full history to ensure rebase stability
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -35,6 +35,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add last_status.txt stats.json
-          git pull --rebase origin main # Ensures local state matches origin
-          git commit -m "Automated update: status and stats [skip ci]" || exit 0
+          # Pull latest changes to avoid push conflicts if manual edits were made
+          git pull --rebase origin main
+          # Commit only if files have changed; otherwise exit gracefully
+          git commit -m "Automated update: status synced [skip ci]" || exit 0
           git push origin main
