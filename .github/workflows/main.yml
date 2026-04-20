@@ -1,0 +1,36 @@
+name: Automate GitHub Status
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Every hour
+  workflow_dispatch: 
+
+jobs:
+  update-status:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Status Script
+        env:
+          GH_TOKEN: ${{ secrets.STATUS_TOKEN }}
+        run: python update_status.py
+
+      - name: Commit and Push State
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add last_status.txt
+          git commit -m "Update last status [skip ci]" || exit 0
+          git push
