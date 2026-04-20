@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status Operation Center</title>
+    <title>4uffin | Status Operation Center</title>
+    
+    <meta property="og:title" content="Status Operation Center">
+    <meta property="og:description" content="Automated profile status rotation powered by Gemini 3 Fast.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#f0f4f8">
+
     <style>
-        /* Early 2000s tech aesthetic / Minimalist dashboard styles */
         :root {
-            --bg-color: #f0f4f8; /* Muted light blue per Shuffle preference */
+            --bg-color: #f0f4f8;
             --text-color: #222;
             --accent-color: #0056b3;
             --border-color: #ccc;
@@ -22,7 +27,6 @@
             padding: 20px;
             margin: 0;
         }
-        /* Fixed-width layout for desktop focus */
         .container {
             width: 100%;
             max-width: 800px;
@@ -61,12 +65,32 @@
             border: 1px solid var(--border-color);
         }
         .history-table th { background: var(--bg-color); font-size: 0.9rem; }
+        
+        /* Pulse animation for the live status */
         .status-pill {
             background: #eef;
-            padding: 2px 6px;
+            padding: 4px 8px;
             border-radius: 4px;
             font-size: 0.9rem;
+            border-left: 3px solid var(--accent-color);
         }
+        
+        .live-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #28a745;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
         footer {
             margin-top: 40px;
             font-size: 0.7rem;
@@ -80,7 +104,7 @@
 <body>
 <div class="container">
     <header>
-        <h1>Status Operation Dashboard</h1>
+        <h1><span class="live-indicator"></span>Status Operation Center</h1>
         <div id="last-updated" style="font-size: 0.7rem;">Initializing...</div>
     </header>
     <div id="stats-grid" class="grid">
@@ -97,7 +121,7 @@
             <div id="error-rate" class="stat-value">--</div>
         </div>
     </div>
-    <h3>Recent Execution History</h3>
+    <h3>Recent Activity History</h3>
     <table class="history-table">
         <thead>
             <tr>
@@ -106,7 +130,7 @@
             </tr>
         </thead>
         <tbody id="history-body">
-            <tr><td colspan="2">Fetching live stats from GitHub...</td></tr>
+            <tr><td colspan="2">Fetching operational logs...</td></tr>
         </tbody>
     </table>
     <footer>
@@ -116,23 +140,20 @@
 <script>
     const USERNAME = '4uffin';
     const REPO = 'random-github-status';
-    // Fetches the raw JSON content from the main branch
     const DATA_URL = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/stats.json`;
 
     async function fetchStats() {
         const historyBody = document.getElementById('history-body');
         try {
             const response = await fetch(DATA_URL);
-            if (!response.ok) throw new Error('API unreachable or repo private');
+            if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
             
-            // Map JSON data to DOM elements
             document.getElementById('total-attempts').innerText = data.total_attempts;
             document.getElementById('success-count').innerText = data.success_count;
             document.getElementById('error-rate').innerText = data.error_rate_percent;
             document.getElementById('last-updated').innerText = `Last System Run: ${data.last_run}`;
             
-            // Populate the history table
             historyBody.innerHTML = '';
             data.history.forEach(item => {
                 const row = document.createElement('tr');
@@ -144,9 +165,8 @@
         }
     }
 
-    // Initial fetch and 5-minute auto-refresh cycle
     fetchStats();
-    setInterval(fetchStats, 300000);
+    setInterval(fetchStats, 300000); // 5-minute refresh
 </script>
 </body>
 </html>
