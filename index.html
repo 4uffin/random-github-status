@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Operation Center</title>
+    <style>
+        :root {
+            --bg-color: #f0f4f8; /* Light blue background as per Shuffle project pref */
+            --text-color: #222;
+            --accent-color: #0056b3;
+            --border-color: #ccc;
+            --font-main: "Courier New", Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Fixed-width desktop layout (800px) */
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            box-shadow: 4px 4px 0px var(--border-color);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        h1 { margin: 0; font-size: 1.5rem; text-transform: uppercase; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            background: #fafafa;
+        }
+
+        .stat-label { font-size: 0.8rem; color: #666; text-transform: uppercase; }
+        .stat-value { font-size: 1.2rem; font-weight: bold; margin-top: 5px; }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .history-table th, .history-table td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .history-table th { background: var(--bg-color); font-size: 0.9rem; }
+
+        .status-pill {
+            background: #eef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .loading { font-style: italic; color: var(--accent-color); }
+        .error { color: #b00; font-weight: bold; }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            color: #888;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Status Operation Dashboard</h1>
+        <div id="last-updated" style="font-size: 0.7rem;">Initializing...</div>
+    </header>
+
+    <div id="stats-grid" class="grid">
+        <div class="stat-card">
+            <div class="stat-label">Total Cycles</div>
+            <div id="total-attempts" class="stat-value">--</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Success Rate</div>
+            <div id="success-count" class="stat-value">--</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Error Rate</div>
+            <div id="error-rate" class="stat-value">--</div>
+        </div>
+    </div>
+
+    <h3>Recent Execution History</h3>
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>Timestamp (UTC)</th>
+                <th>Applied Status</th>
+            </tr>
+        </thead>
+        <tbody id="history-body">
+            <tr><td colspan="2" class="loading">Fetching data from GitHub...</td></tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <p>Vibe-coded via Gemini 3 Fast • Data sourced from stats.json</p>
+    </footer>
+</div>
+
+<script>
+    // Configuration: Replace with your actual details
+    const USERNAME = 'connornduffy';
+    const REPO = 'random-github-status';
+    const DATA_URL = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/stats.json`;
+
+    async function fetchStats() {
+        const historyBody = document.getElementById('history-body');
+        
+        try {
+            const response = await fetch(DATA_URL);
+            if (!response.ok) throw new Error('Could not reach stats.json');
+            
+            const data = await response.json();
+
+            // Update UI
+            document.getElementById('total-attempts').innerText = data.total_attempts;
+            document.getElementById('success-count').innerText = data.success_count;
+            document.getElementById('error-rate').innerText = data.error_rate_percent;
+            document.getElementById('last-updated').innerText = `Last System Run: ${data.last_run}`;
+
+            // Build History Table
+            historyBody.innerHTML = '';
+            data.history.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.time}</td>
+                    <td><span class="status-pill">${item.status}</span></td>
+                `;
+                historyBody.appendChild(row);
+            });
+
+        } catch (err) {
+            historyBody.innerHTML = `<tr><td colspan="2" class="error">Error: ${err.message}. Ensure the repo is public.</td></tr>`;
+        }
+    }
+
+    // Run on load
+    fetchStats();
+    // Refresh every 5 minutes to stay current
+    setInterval(fetchStats, 300000);
+</script>
+
+</body>
+</html>
