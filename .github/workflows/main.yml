@@ -3,14 +3,13 @@ name: Automate GitHub Status
 on:
   schedule:
     - cron: '0 * * * *' # Triggers at the top of every hour
-  workflow_dispatch: # Allows manual trigger from the GitHub UI
+  workflow_dispatch: # Enables manual trigger via Actions UI
 
 jobs:
   update-status:
     runs-on: ubuntu-latest
-    timeout-minutes: 5 # Prevents a hung process from draining Actions minutes
     permissions:
-      contents: write # Essential for the bot to commit stats.json and last_status.txt
+      contents: write # Required for the runner to commit changes back to repo
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -34,9 +33,17 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # Stage the specific files we manage
           git add last_status.txt stats.json
-          # Pull latest changes to avoid push conflicts if manual edits were made
+          
+          # Check for local changes to avoid Git Exit Code 128 (nothing to commit)
+          if git diff --cached --quiet; then
+            echo "No changes detected. Skipping commit."
+            exit 0
+          fi
+          
+          # Sync with remote branch to avoid push conflicts
           git pull --rebase origin main
-          # Commit only if files have changed; otherwise exit gracefully
-          git commit -m "Automated update: status synced [skip ci]" || exit 0
+          git commit -m "Automated update [skip ci]"
           git push origin main
