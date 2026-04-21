@@ -2,19 +2,23 @@ name: Automate GitHub Status
 
 on:
   schedule:
-    - cron: '0 * * * *' # Triggers at the top of every hour
-  workflow_dispatch: # Enables manual trigger via Actions UI
+    # Triggers at the start of every hour (UTC)
+    - cron: '0 * * * *' 
+  # Allows the user to trigger the automation manually from the Actions tab
+  workflow_dispatch: 
 
 jobs:
   update-status:
     runs-on: ubuntu-latest
+    # Required for the bot to commit stats.json and last_status.txt back to the repo
     permissions:
-      contents: write # Required for the runner to commit changes back to repo
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetches full history to ensure rebase stability
+          # Fetches full history; critical for rebase operations to succeed
+          fetch-depth: 0 
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -22,28 +26,35 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
+        # Standard requests library for API communication
         run: pip install requests
 
       - name: Run Status Update
         env:
+          # Maps your repository secret to an environment variable for the script
           GH_TOKEN: ${{ secrets.STATUS_TOKEN }}
         run: python update_status.py
 
       - name: Commit and Push Changes
         run: |
+          # Configure the local Git environment for the Action runner
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Stage the specific files we manage
+          # Stage files modified by the Python script
           git add last_status.txt stats.json
           
-          # Check for local changes to avoid Git Exit Code 128 (nothing to commit)
+          # Logic gate: Avoid Exit 128 (nothing to commit) if files haven't changed
           if git diff --cached --quiet; then
             echo "No changes detected. Skipping commit."
             exit 0
           fi
           
-          # Sync with remote branch to avoid push conflicts
-          git pull --rebase origin main
-          git commit -m "Automated update [skip ci]"
+          # Sync with remote. 
+          # --autostash tucks local changes away, pulls, then reapplies them.
+          # This prevents the 'index contains uncommitted changes' error.
+          git pull --rebase --autostash origin main
+          
+          # Finalize the sync and push back to 4uffin/random-github-status
+          git commit -m "Automated update: status synced [skip ci]"
           git push origin main
