@@ -1,1 +1,1 @@
-Vanilla JS or bust
+Minimalist CSS is the goal
