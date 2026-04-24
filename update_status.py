@@ -41,7 +41,7 @@ def set_github_status(token, message, emoji):
             if attempt == 3: raise e
             time.sleep(5 * attempt)
 
-def update_stats(base_path, pool_size, status_text=None, error=None):
+def update_stats(base_path, pool_size, status_text=None, emoji=None, error=None):
     """
     Maintains stats.json. Calculates error rates and manages a rolling 
     history of the last 15 updates. Tracks total status pool size.
@@ -77,8 +77,13 @@ def update_stats(base_path, pool_size, status_text=None, error=None):
         stats["success_count"] += 1
         stats["last_error"] = "None"
         if status_text:
-            # Keep only the most recent 15 entries for the dashboard
-            stats["history"].insert(0, {"time": now, "status": status_text})
+            # Stores text and emoji shortcode for dashboard mapping
+            stats["history"].insert(0, {
+                "time": now, 
+                "status": status_text,
+                "emoji": emoji
+            })
+            # Limit history to 15 entries to prevent file bloat
             stats["history"] = stats["history"][:15]
 
     if stats["total_attempts"] > 0:
@@ -241,13 +246,15 @@ def update_github_status():
             with open(state_file, "w", encoding="utf-8") as f:
                 f.write(status_text)
             
-            update_stats(base_path, len(status_pool), status_text=status_text)
+            # Pass both text and emoji to the stats logger
+            update_stats(base_path, len(status_pool), status_text=status_text, emoji=emoji)
             print(f"Set: {status_text}")
         else:
             raise Exception(f"HTTP {response.status_code}")
 
     except Exception as e:
         print(f"Error: {e}")
+        # Log failure while preserving the pool size metric
         update_stats(base_path, len(status_pool), error=e)
         sys.exit(1)
 
