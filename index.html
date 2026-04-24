@@ -98,7 +98,7 @@
         }
 
         footer {
-            margin-top: 40 -px;
+            margin-top: 40px;
             font-size: 0.7rem;
             color: #888;
             text-align: center;
@@ -154,53 +154,44 @@
     const REPO = 'random-github-status';
     const DATA_URL = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/stats.json`;
 
-    // Map of GitHub Shortcodes to Unicode Emojis
+    // Map of GitHub Shortcodes to Unicode Emojis for browser rendering
     const emojiMap = {
-        ":video_game:": "🎮", ":ghost:": "👻", ":telephone_receiver:": "📞",
-        ":computer:": "💻", ":house:": "🏠", ":bread:": "🍞", ":distraught:": "😫",
-        ":keyboard:": "⌨️", ":memory:": "💾", ":penguin:": "🐧", ":memo:": "📝",
-        ":question:": "❓", ":milky_way:": "🌌", ":crossed_swords:": "⚔️",
-        ":city_sunset:": "🌆", ":foggy:": "🌫️", ":speech_balloon:": "💬",
-        ":fountain_pen:": "🖋️", ":art:": "🎨", ":satellite:": "📡",
-        ":night_with_stars:": "🌃", ":heart:": "❤️", ":icecream:": "🍦",
-        ":black_currant:": "🫐", ":eyeglasses:": "👓", ":money_with_wings:": "💸",
-        ":clapper:": "🎬", ":briefcase:": "💼", ":bear:": "🐻", ":records:": " vinyl:",
-        ":office:": "🏢", ":owl:": "🦉", ":person_doing_cartwheel:": "🤸",
-        ":pretzel:": "🥨", ":trophy:": "🏆", ":hot_pepper:": "🌶️", ":zap:": "⚡",
-        ":classical_building:": "🏛️", ":red_car:": "🚗", ":high_voltage:": "⚡",
-        ":seedling:": "🌱", ":sauropod:": "🦕", ":smoking:": "🚬", ":ticket:": "🎫",
-        ":multiplication:": "✖️", ":coin:": "🪙", ":ringed_planet:": "🪐",
-        ":stop_sign:": "🛑", ":red_circle:": "🔴", ":key:": "🔑", ":robot:": "🤖",
-        ":rocket:": "🚀", ":ship:": "🚢", ":mag:": "🔍", ":suit:": "🕴️",
-        ":snowflake:": "❄️", ":man_mage:": "🧙", ":rabbit:": "🐇", ":birthday:": "🎂",
-        ":sun_with_face:": "🌞", ":anchor:": "⚓", ":radioactive:": "☢️",
-        ":fairy:": "🧚", ":scroll:": "📜", ":skull:": "💀", ":wind_face:": "🌬️",
-        ":mushroom:": "🍄", ":star:": "⭐", ":floppy_disk:": "💾", ":wastebasket:": "🗑️",
-        ":lady_beetle:": "🐞", ":shrug:": "🤷", ":cyclone:": "🌀", ":exploding_head:": "🤯",
-        ":package:": "📦", ":hammer:": "🔨", ":hot_face:": "🥵", ":thinking:": "🤔",
-        ":repeat:": "🔁", ":cat:": "🐱", ":hocho:": "🔪", ":chart_with_upwards_trend:": "📈",
-        ":dice:": "🎲", ":put_litter_in_its_place:": "🚮", ":vulcan_salute:": "🖖",
-        ":eye:": "👁️", ":tux:": "🐧", ":t_rex:": "🦖", ":joystick:": "🕹️",
-        ":alien:": "👽", ":microchip:": "📟", ":satellite_antenna:": "📡",
-        ":crystal_ball:": "🔮", ":test_tube:": "🧪", ":infinity:": "∞", ":dna:": "🧬"
+        ":video_game:": "🎮", ":ghost:": "👻", ":telephone_receiver:": "📞", ":computer:": "💻", 
+        ":house:": "🏠", ":bread:": "🍞", ":distraught:": "😫", ":keyboard:": "⌨️", 
+        ":memory:": "💾", ":penguin:": "🐧", ":memo:": "📝", ":question:": "❓", 
+        ":milky_way:": "🌌", ":crossed_swords:": "⚔️", ":city_sunset:": "🌆", ":foggy:": "🌫️", 
+        ":speech_balloon:": "💬", ":fountain_pen:": "🖋️", ":art:": "🎨", ":satellite:": "📡", 
+        ":night_with_stars:": "🌃", ":heart:": "❤️", ":icecream:": "🍦", ":black_currant:": "🫐", 
+        ":eyeglasses:": "👓", ":money_with_wings:": "💸", ":clapper:": "🎬", ":briefcase:": "💼", 
+        ":bear:": "🐻", ":records:": "💿", ":office:": "🏢", ":owl:": "🦉", 
+        ":person_doing_cartwheel:": "🤸", ":pretzel:": "🥨", ":trophy:": "🏆", ":hot_pepper:": "🌶️", 
+        ":zap:": "⚡", ":classical_building:": "🏛️", ":red_car:": "🚗", ":high_voltage:": "⚡", 
+        ":seedling:": "🌱", ":sauropod:": "🦕", ":smoking:": "🚬", ":ticket:": "🎫", 
+        ":multiplication:": "✖️", ":coin:": "🪙", ":ringed_planet:": "🪐", ":stop_sign:": "🛑", 
+        ":red_circle:": "🔴", ":key:": "🔑", ":robot:": "🤖", ":rocket:": "🚀", 
+        ":ship:": "🚢", ":mag:": "🔍", ":suit:": "🕴️", ":snowflake:": "❄️", 
+        ":man_mage:": "🧙", ":rabbit:": "🐇", ":birthday:": "🎂", ":sun_with_face:": "🌞", 
+        ":anchor:": "⚓", ":radioactive:": "☢️", ":fairy:": "🧚", ":scroll:": "📜", 
+        ":skull:": "💀", ":wind_face:": "🌬️", ":mushroom:": "🍄", ":star:": "⭐", 
+        ":floppy_disk:": "💾", ":wastebasket:": "🗑️", ":lady_beetle:": "🐞", ":shrug:": "🤷", 
+        ":cyclone:": "🌀", ":exploding_head:": "🤯", ":package:": "📦", ":hammer:": "🔨", 
+        ":hot_face:": "🥵", ":thinking:": "🤔", ":repeat:": "🔁", ":cat:": "🐱", 
+        ":hocho:": "🔪", ":chart_with_upwards_trend:": "📈", ":dice:": "🎲", 
+        ":put_litter_in_its_place:": "🚮", ":vulcan_salute:": "🖖", ":eye:": "👁️", 
+        ":tux:": "🐧", ":t_rex:": "🦖", ":joystick:": "🕹️", ":alien:": "👽", 
+        ":microchip:": "📟", ":satellite_antenna:": "📡", ":crystal_ball:": "🔮", 
+        ":test_tube:": "🧪", ":infinity:": "∞", ":dna:": "🧬"
     };
-
-    function parseEmoji(text) {
-        // Find shortcode pattern like :emoji_name:
-        const match = text.match(/:[a-z0-9_]+:/g);
-        if (match && emojiMap[match[0]]) {
-            return emojiMap[match[0]];
-        }
-        return "⚙️"; // Default if no icon found
-    }
 
     async function fetchStats() {
         const historyBody = document.getElementById('history-body');
         try {
+            // Fetch the updated stats.json containing new emoji field
             const response = await fetch(DATA_URL);
             if (!response.ok) throw new Error('Data fetch failed');
             const data = await response.json();
             
+            // Populate summary cards
             document.getElementById('total-attempts').innerText = data.total_attempts;
             document.getElementById('pool-count').innerText = data.status_pool_count || '200';
             document.getElementById('success-count').innerText = data.success_count;
@@ -209,11 +200,9 @@
             
             historyBody.innerHTML = '';
             data.history.forEach(item => {
+                // Perform lookup using the new explicit emoji field from JSON
+                const icon = emojiMap[item.emoji] || "📝";
                 const row = document.createElement('tr');
-                // We assume status field might contain the shortcode or it is separate
-                // Since our pool is ("Text", ":emoji:"), we need to handle if 'item.status' is just text
-                // Adjusting to find emoji in the string or use a placeholder
-                const icon = parseEmoji(item.status) || "📝";
                 
                 row.innerHTML = `
                     <td>${item.time}</td>
@@ -227,8 +216,9 @@
         }
     }
 
+    // Initial load and periodic refresh cycle
     fetchStats();
-    setInterval(fetchStats, 300000);
+    setInterval(fetchStats, 300000); // 5-minute refresh interval
 </script>
 </body>
 </html>
