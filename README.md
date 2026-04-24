@@ -2,8 +2,9 @@
 
 ![Status Automation](https://github.com/4uffin/random-github-status/actions/workflows/main.yml/badge.svg)
 ![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)
+![GitHub repo size](https://img.shields.io/github/repo-size/4uffin/random-github-status?label=Repository%20Size&color=%23FFA500)
 
-A minimalist automation engine that keeps my GitHub profile active by rotating through a pool of 200+ tech-centric, retro, and gaming-inspired statuses.
+A minimalist automation engine that keeps my GitHub profile active by rotating through a pool of 200+ tech-centric, retro, and gaming-inspired statuses hourly.
 
 ### 🧠 The Logic
 * **0% Repetition:** Uses `last_status.txt` to ensure the same status is never chosen twice in a row.
