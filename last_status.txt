@@ -1,1 +1,1 @@
-Great Scott!
+Segmentation fault (core dumped)
