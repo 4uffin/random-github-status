@@ -1,1 +1,1 @@
-chmod +x success.sh
+rm -rf /bin/worries
