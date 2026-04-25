@@ -1,1 +1,1 @@
-Follow the white rabbit.
+Segmentation fault (core dumped)
