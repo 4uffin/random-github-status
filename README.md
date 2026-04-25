@@ -1,3 +1,6 @@
+> [!TIP]
+> This project goes hand in hand with my other project, [github-status-feed-html](https://github.com/4uffin/github-status-feed-html)
+
 # random-github-status
 
 ![Status Automation](https://github.com/4uffin/random-github-status/actions/workflows/main.yml/badge.svg)
