@@ -1,1 +1,1 @@
-42: The answer to everything
+Complexity is the enemy of reliability.
