@@ -1,1 +1,1 @@
-Premature optimization is the root of all evil.
+42: The answer to everything
