@@ -2,8 +2,8 @@ name: Automate GitHub Status
 
 on:
   schedule:
-    # Triggers at the start of every hour (UTC)
-    - cron: '0 * * * *' 
+    # Triggers 5 minutes after the start of every hour (UTC)
+    - cron: '5 * * * *' 
   # Allows the user to trigger the automation manually from the Actions tab
   workflow_dispatch: 
 
