@@ -1,1 +1,1 @@
-Two hard things in CS: cache invalidation and naming things.
+Life finds a way.
