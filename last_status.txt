@@ -1,1 +1,1 @@
- 
+Re-seating the RAM usually works.
