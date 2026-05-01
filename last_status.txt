@@ -1,1 +1,1 @@
-There is no such thing as a simple change.
+Premature optimization is the root of all evil.
