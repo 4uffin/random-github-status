@@ -103,7 +103,7 @@ def update_github_status():
     
     # Status pool: Re-integrated requested items + variety expansion (Exactly 200)
     status_pool = [
-        # --- REQUESTED ITEMS (24) ---
+        # --- REQUESTED ITEMS (35) ---
         ("↑ ↑ ↓ ↓ ← → ← → B A", ":video_game:"), ("Error 404: Status Not Found", ":ghost:"),
         ("Dial-up noises intensifying", ":telephone_receiver:"), ("Thinking in 01010110", ":computer:"),
         ("127.0.0.1", ":house:"), ("Sudo make me a sandwich", ":bread:"),
@@ -116,8 +116,14 @@ def update_github_status():
         ("Minimalist CSS is the goal", ":art:"), ("Small Web protocol exploration", ":satellite:"),
         ("Dark mode is the only mode", ":night_with_stars:"), ("JSON is my love language", ":heart:"),
         ("Vanilla JS or bust", ":icecream:"), ("Markdown is life", ":memo:"),
+        ("It's not a bug, it's a feature", ":beetle:"), ("Git commit -m 'Fixed everything'", ":package:"),
+        ("Compiling...", ":hourglass_flowing_sand:"), ("Rubber ducking through a logic error", ":duck:"),
+        ("One does not simply walk into production", ":mountain:"), ("RTFM (Read The Friendly Manual)", ":book:"),
+        ("Pythonic by design", ":snake:"), ("The cloud is just someone else's computer", ":cloud:"),
+        ("Hello World!", ":earth_americas:"), ("Don't repeat yourself (DRY)", ":droplet:"),
+        ("Refactoring for the soul", ":hammer_and_wrench:"),
 
-        # --- THE OFFICE US (30) ---
+        # --- THE OFFICE US (35) ---
         ("I’m not superstitious, but I am a little stitious.", ":black_currant:"),
         ("Identity theft is not a joke, Jim!", ":eyeglasses:"),
         ("I declare bankruptcy!", ":money_with_wings:"), ("Threat Level Midnight", ":clapper:"),
@@ -136,8 +142,13 @@ def update_github_status():
         ("That’s what she said.", ""), ("I wonder what people like about me. Probably my pigtails.", ""),
         ("If I can't scuba, then what's this all been about?", ":scuba:"), ("Creed Bratton has never stood out. He’s a survivor.", ""),
         ("Everything I have I owe to this job. This stupid, wonderful job.", ""),
+        ("Save Bandit!", ":cat:"),
+        ("I am running away from my responsibilities. And it feels good.", ":runner:"),
+        ("Should have burned this place down when I had the chance.", ":fire:"),
+        ("Safety but wait, a second, point of order. Shirley, occupant, which do we use?", ":ambulance:"),
+        ("Business unless you’re Kevin.", ":cookie:"),
 
-        # --- CINEMA & CLASSICS (31) ---
+        # --- CINEMA & CLASSICS (35) ---
         ("Do or do not. There is no try.", ":crossed_swords:"), ("I hate snakes, Jock! I hate 'em!", ":snake:"),
         ("This belongs in a museum!", ":classical_building:"), ("Roads? Where we're going, we don't need roads.", ":red_car:"),
         ("1.21 Gigawatts!", ":high_voltage:"), ("Life finds a way.", ":seedling:"),
@@ -154,8 +165,10 @@ def update_github_status():
         ("Inconceivable!", ""), ("Follow the white rabbit.", ":rabbit:"),
         ("I'm gonna make him an offer he can't refuse.", ""), ("Keep your friends close, but your enemies closer.", ""),
         ("The first rule of Fight Club is: You do not talk about Fight Club.", ""),
+        ("Say 'hello' to my little friend!", ":boom:"), ("Just keep swimming.", ":fish:"),
+        ("My precious.", ":ring:"), ("I am Iron Man.", ":mechanical_arm:"),
 
-        # --- VIDEO GAMES (25) ---
+        # --- VIDEO GAMES (35) ---
         ("The cake is a lie.", ":birthday:"), ("Praise the Sun!", ":sun_with_face:"),
         ("It's dangerous to go alone! Take this.", ":crossed_swords:"), ("Protocol 3: Protect the Pilot", ":robot:"),
         ("Snake? Snake?! SNAKE!!!", ":snake:"), ("Would you kindly?", ":anchor:"),
@@ -168,6 +181,15 @@ def update_github_status():
         ("Nothing is true, everything is permitted.", ""), ("Do you get to the Cloud District very often?", ""),
         ("Prepare for unforeseen consequences.", ""), ("Endure and survive.", ""),
         ("Rip and tear, until it is done.", ""), ("May your road lead you to warm sands.", ""),
+        ("Wind's howling.", ":wolf:"),
+        ("The right man in the wrong place can make all the difference.", ":briefcase:"),
+        ("Whether we wanted it or not, we've stepped into a war with the Cabal.", ":ringed_planet:"),
+        ("A hunter must hunt.", ":crescent_moon:"),
+        ("Kept you waiting, huh?", ":eyeglasses:"), ("Boy!", ":axe:"),
+        ("The numbers, Mason! What do they mean?", ":input_numbers:"),
+        ("I used to be an adventurer like you, then I took an arrow in the knee.", ":bow_and_arrow:"),
+        ("Get over here!", ":chains:"),
+        ("Don't make a girl a promise if you know you can't keep it.", ":sparkles:"),
 
         # --- BRUTALLY HONEST DEV REALITY (35) ---
         ("Writing code that I will hate in six months.", ""), ("It works. I don't know why. I'm not touching it.", ""),
@@ -189,7 +211,7 @@ def update_github_status():
         ("Every bug was once a feature request.", ""), ("Refactoring: Because yesterday's me was an idiot.", ""),
         ("There is no such thing as a simple change.", ""),
 
-        # --- LINUX & HARDWARE (30) ---
+        # --- LINUX & HARDWARE (35) ---
         ("I use Arch btw", ":penguin:"), ("RTFM", ""),
         ("Flatpak > Snap", ":package:"), ("Compiling the kernel...", ":coffee:"),
         ("Magic smoke containment specialist", ":dash:"), ("Distro hopping again...", ":cyclone:"),
@@ -205,8 +227,12 @@ def update_github_status():
         ("I love the smell of ozone in the morning.", ""), ("Static electricity is my enemy.", ""),
         ("Re-seating the RAM usually works.", ""), ("Cable management is an art form.", ""),
         ("Waiting for the SSH connection...", ""), ("Is the server down or is it just me?", ""),
+        ("Tailing the logs...", ":scroll:"), ("Sudo !!", ":zap:"),
+        ("4GB of VRAM is enough for anyone... probably.", ":clapper:"),
+        ("Minty fresh desktop environment", ":leafy_green:"),
+        ("Dual-booting into chaos", ":wavy_dash:"),
 
-        # --- LOGIC, CS THEORY & GENERAL (15) ---
+        # --- LOGIC, CS THEORY & GENERAL (35) ---
         ("P vs NP: Still undecided", ":thinking:"), ("Recursion: See status for details", ":repeat:"),
         ("Entropy increases", ":cyclone:"), ("Schrödinger's Status", ":cat:"),
         ("Occam's Razor: Simplest is usually right.", ":hocho:"), ("Standard Deviation", ":chart_with_upwards_trend:"),
@@ -214,11 +240,26 @@ def update_github_status():
         ("Correlation is not causation.", ":chart_with_upwards_trend:"), ("Non-deterministic behavior detected.", ":dice:"),
         ("Absolute Zero.", ":snowflake:"), ("Everything is an object", ":package:"),
         ("Garbage collection in progress", ":put_litter_in_its_place:"), ("Hello World", ""),
-        ("System.gc();", ""),
+        ("System.gc();", ""), ("Turing complete", ":checkered_flag:"),
+        ("Off-by-one errors are the worst", ":straight_ruler:"), ("Floating point precision is a myth", ":money_with_wings:"),
+        ("Race condition in progress...", ":racing_car:"),
+        ("Heisenberg's Uncertainty Principle", ":atom_symbol:"), ("Stack Overflow", ":layers:"),
+        ("Deadlock detected", ":lock:"), ("Big O: O(1) is the dream", ":rocket:"),
+        ("Null pointer exception", ":point_up:"), ("Binary search for meaning", ":mag:"),
+        ("Asymptotic complexity", ":chart_with_downwards_trend:"), ("The Halting Problem is unsolvable", ":stop_sign:"),
+        ("Finite State Machine", ":gear:"), ("Inheritance: I am my father's son", ":family:"),
+        ("Encapsulation is key", ":closed_lock_with_key:"), ("Boolean logic: True or False?", ":switch:"),
+        ("Abstractions all the way down", ":arrow_down:"), ("Deterministic chaos", ":twisted_rightwards_arrows:"),
+        ("Syntactic sugar", ":candy:"), ("Functional programming for purity", ":alembic:"),
 
-        # --- EMOJI ONLY (10) ---
+        # --- EMOJI ONLY (35) ---
         (" ", ":computer:"), (" ", ":brain:"), (" ", ":tux:"), (" ", ":zap:"), (" ", ":floppy_disk:"),
-        (" ", ":t_rex:"), (" ", ":joystick:"), (" ", ":alien:"), (" ", ":clapper:"), (" ", ":microchip:")
+        (" ", ":t_rex:"), (" ", ":joystick:"), (" ", ":alien:"), (" ", ":clapper:"), (" ", ":microchip:"),
+        (" ", ":rocket:"), (" ", ":saturn:"), (" ", ":telescope:"), (" ", ":gear:"), (" ", ":hammer_and_wrench:"),
+        (" ", ":keyboard:"), (" ", ":mouse_three_button:"), (" ", ":desktop_computer:"), (" ", ":battery:"), (" ", ":link:"),
+        (" ", ":globe_with_meridians:"), (" ", ":satellite:"), (" ", ":pager:"), (" ", ":radio:"), (" ", ":level_slider:"),
+        (" ", ":control_knobs:"), (" ", ":film_projector:"), (" ", ":video_game:"), (" ", ":crystal_ball:"), (" ", ":dna:"),
+        (" ", ":atom_symbol:"), (" ", ":alembic:"), (" ", ":black_hole:"), (" ", ":compass:"), (" ", ":hourglass_flowing_sand:"),
     ]
 
     try:
