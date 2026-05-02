@@ -1,1 +1,1 @@
-git commit -m 'fixed bugs by creating new ones'
+The best code is the code you can delete.
