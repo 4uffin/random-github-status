@@ -1,1 +1,1 @@
-System.gc();
+Syntactic sugar
