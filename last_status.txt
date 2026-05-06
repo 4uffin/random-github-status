@@ -1,1 +1,1 @@
-Standard Deviation
+Finite State Machine
