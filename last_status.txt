@@ -1,1 +1,1 @@
-Flatpak > Snap
+The best code is the code you can delete.
