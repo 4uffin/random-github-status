@@ -153,9 +153,8 @@ def update_github_status():
         ("How the turntables...", ":records:"),
         ("Dwight, you ignorant slut!", ":office:"),
         ("I'm an early bird and a night owl. I'm wise and I have worms.", ":owl:"),
-        ("Sometimes I start a sentence and I don't even know where it's going.", "")(
-            "Parkour!", ":person_doing_cartwheel:"
-        ),
+        ("Sometimes I start a sentence and I don't even know where it's going.", ""),
+        ("Parkour!", ":person_doing_cartwheel:"),
         ("Pretzel Day", ":pretzel:"),
         ("The Dundies", ":trophy:"),
         ("Did I stutter?", ""),
@@ -165,9 +164,8 @@ def update_github_status():
         ("Why are you the way that you are?", ""),
         ("Dunder Mifflin, this is Pam.", ":telephone_receiver:"),
         ("You miss 100% of the shots you don't take. - Michael Scott", ""),
-        ("Jim Halpert is a smudge and arrogant.", "")(
-            "I'm fast. Somewhere between a snake and a mongoose.", ""
-        ),
+        ("Jim Halpert is a smudge and arrogant.", ""),
+        ("I'm fast. Somewhere between a snake and a mongoose.", ""),
         ("I don't want to work. I just want to bang on this mug all day.", ":coffee:"),
         ("I hate looking at your face. I wanna smash it.", ""),
         ("Rit-dit-dit-do-doo!", ""),
@@ -179,36 +177,23 @@ def update_github_status():
         ("Save Bandit!", ":cat:"),
         ("I am running away from my responsibilities. And it feels good.", ":runner:"),
         ("Should have burned this place down when I had the chance.", ":fire:"),
-        (
-            "Safety but wait, a second, point of order. Shirley, occupant, which do we use?",
-            ":ambulance:",
-        ),
+        ("Safety but wait, a second, point of order. Shirley, occupant, which do we use?", ":ambulance:"),
         ("Business unless you’re Kevin.", ":cookie:"),
         ("I want people to be afraid of how much they love me.", ":heart:"),
         ("Dwight, get out of my nook!", ":book:"),
         ("I am Beyoncé, always.", ":crown:"),
         ("If I don't have some cake soon, I might die.", ":birthday:"),
-        (
-            "Every week, I'm supposed to take four hours and do a quality spot-check at the paper mill.",
-            ":factory:",
-        ),
+        ("Every week, I'm supposed to take four hours and do a quality spot-check at the paper mill.", ":factory:"),
         ("I am a black belt in gift wrapping.", ":gift:"),
         ("Number one: Inverted file system.", ":file_folder:"),
-        ("I ground up some aspirin and put it in his food.", ":pill:")(
-            "I have a lot of questions. Number one, how dare you?", ":question:"
-        ),
+        ("I ground up some aspirin and put it in his food.", ":pill:"),
+        ("I have a lot of questions. Number one, how dare you?", ":question:"),
         ("The eyes are the groin of the head.", ":eyes:"),
         ("Mini-cupcakes? As in the mini version of regular cupcakes?", ":cupcake:"),
-        (
-            "I'm not a millionaire. I thought I would be by the time I was 30.",
-            ":moneybag:",
-        ),
+        ("I'm not a millionaire. I thought I would be by the time I was 30.", ":moneybag:"),
         ("Everything's a joke to you.", ":clown_face:"),
         ("Suddenly she’s not yo’ ho no mo’.", ":broken_heart:"),
-        (
-            "There’s a lot of beauty in ordinary things. Isn’t that kind of the point?",
-            ":camera:",
-        ),
+        ("There’s a lot of beauty in ordinary things. Isn’t that kind of the point?", ":camera:"),
         
         # --- CINEMA & CLASSICS (50) ---
         ("Do or do not. There is no try.", ":crossed_swords:"),
@@ -219,15 +204,13 @@ def update_github_status():
         ("Life finds a way.", ":seedling:"),
         ("Clever girl...", ":sauropod:"),
         ("Hold on to your butts.", ":smoking:"),
-        ("Great Scott!", ":zap:")("No ticket!", ":ticket:"),
-        ("X never, ever marks the spot.", ":multiplication:")(
-            "Fortune and glory, kid.", ":coin:"
-        ),
+        ("Great Scott!", ":zap:"), ("No ticket!", ":ticket:"),
+        ("X never, ever marks the spot.", ":multiplication:"),
+        ("Fortune and glory, kid.", ":coin:"),
         ("I find your lack of faith disturbing.", ":ringed_planet:"),
         ("Resistance is futile.", ":stop_sign:"),
-        ("I'm sorry, Dave. I'm afraid I can't do that.", ":red_circle:")(
-            "42: The answer to everything", ":key:"
-        ),
+        ("I'm sorry, Dave. I'm afraid I can't do that.", ":red_circle:"),
+        ("42: The answer to everything", ":key:"),
         ("I'll be back.", ":robot:"),
         ("Houston, we have a problem.", ":rocket:"),
         ("May the Force be with you.", ":milky_way:"),
@@ -290,58 +273,28 @@ def update_github_status():
         ("Rip and tear, until it is done.", ""),
         ("May your road lead you to warm sands.", ""),
         ("Wind's howling.", ":wolf:"),
-        (
-            "The right man in the wrong place can make all the difference.",
-            ":briefcase:",
-        ),
-        (
-            "Whether we wanted it or not, we've stepped into a war with the Cabal.",
-            ":ringed_planet:",
-        ),
+        ("The right man in the wrong place can make all the difference.", ":briefcase:"),
+        ("Whether we wanted it or not, we've stepped into a war with the Cabal.", ":ringed_planet:"),
         ("A hunter must hunt.", ":crescent_moon:"),
         ("Kept you waiting, huh?", ":eyeglasses:"),
         ("Boy!", ":axe:"),
         ("The numbers, Mason! What do they mean?", ":input_numbers:"),
-        (
-            "I used to be an adventurer like you, then I took an arrow in the knee.",
-            ":bow_and_arrow:",
-        ),
+        ("I used to be an adventurer like you, then I took an arrow in the knee.", ":bow_and_arrow:"),
         ("Get over here!", ":chains:"),
         ("Don't make a girl a promise if you know you can't keep it.", ":sparkles:"),
-        (
-            "Stand in the ashes of a trillion dead souls, and ask the ghosts if honor matters.",
-            ":ghost:",
-        ),
+        ("Stand in the ashes of a trillion dead souls, and ask the ghosts if honor matters.", ":ghost:"),
         ("What is a man? A miserable little pile of secrets.", ":wine_glass:"),
         ("I am Andrew Ryan, and I'm here to ask you a question.", ":ocean:"),
         ("Seven six two millimeter. Full metal jacket.", ":bullet_train:"),
         ("Objective: Survive.", ":shield:"),
-        (
-            "Even in dark times, we cannot relinquish the things that make us human.",
-            ":heart:",
-        ),
-        (
-            "It’s time to kick ass and chew bubblegum... and I’m all out of gum.",
-            ":sunglasses:",
-        ),
-        (
-            "A skyscraper is a lot like a person. It’s got a skeleton, it’s got a skin.",
-            ":building_construction:",
-        ),
+        ("Even in dark times, we cannot relinquish the things that make us human.", ":heart:"),
+        ("It’s time to kick ass and chew bubblegum... and I’m all out of gum.", ":sunglasses:"),
+        ("A skyscraper is a lot like a person. It’s got a skeleton, it’s got a skin.", ":building_construction:"),
         ("No gods or kings. Only man.", ":statue_of_liberty:"),
         ("History is written by the victors.", ":memo:"),
-        (
-            "I survive because the fire inside burned brighter than the fire around me.",
-            ":fire:",
-        ),
-        (
-            "The healthy human mind doesn't wake up in the morning thinking this is its last day on Earth.",
-            ":earth_americas:",
-        ),
-        (
-            "Good men mean well. We just don't always end up doing well.",
-            ":man_climbing:",
-        ),
+        ("I survive because the fire inside burned brighter than the fire around me.", ":fire:"),
+        ("The healthy human mind doesn't wake up in the morning thinking this is its last day on Earth.", ":earth_americas:"),
+        ("Good men mean well. We just don't always end up doing well.", ":man_climbing:"),
         ("You can't just shoot a hole into the surface of Mars.", ":test_tube:"),
         ("Everything is shiny and chrome.", ":motorcycle:"),
         
@@ -350,10 +303,7 @@ def update_github_status():
         ("It works. I don't know why. I'm not touching it.", ""),
         ("Fixing the fix that broke the fix.", ""),
         ("My code is a specialized form of art called 'Garbage'.", ""),
-        (
-            "Deleting 100 lines of code is more satisfying than writing them.",
-            ":wastebasket:",
-        ),
+        ("Deleting 100 lines of code is more satisfying than writing them.", ":wastebasket:"),
         ("Segmentation fault (core dumped)", ""),
         ("git commit -m 'fixed bugs by creating new ones'", ""),
         ("A programmer is a machine that turns caffeine into code.", ":coffee:"),
@@ -384,10 +334,7 @@ def update_github_status():
         ("Every bug was once a feature request.", ""),
         ("Refactoring: Because yesterday's me was an idiot.", ""),
         ("There is no such thing as a simple change.", ""),
-        (
-            "Junior devs solve problems with code. Senior devs solve problems by deleting it.",
-            "",
-        ),
+        ("Junior devs solve problems with code. Senior devs solve problems by deleting it.", ""),
         ("Nothing is more permanent than a temporary hack.", ""),
         ("A 'quick fix' usually takes three hours and breaks two other things.", ""),
         ("If the code was hard to write, it should be hard to read.", ""),
@@ -398,10 +345,7 @@ def update_github_status():
         ("Comments should explain 'why', not 'what'.", ""),
         ("Software is a gas; it expands to fill its container.", ""),
         ("The project will be finished as soon as we stop adding features.", ""),
-        (
-            "Debugging is like being the detective in a movie where you are also the murderer.",
-            ":detective:",
-        ),
+        ("Debugging is like being the detective in a movie where you are also the murderer.", ":detective:"),
         ("If it isn't broken, you haven't added enough features yet.", ""),
         ("Naming a variable is the hardest part of my workday.", ""),
         ("Code works, I sleep. Code breaks, I weep.", ":cry:"),
@@ -455,10 +399,7 @@ def update_github_status():
         ("The terminal is my natural habitat.", ":keyboard:"),
         ("Proprietary drivers are the devil.", ":smiling_imp:"),
         ("Swap space is for people who can't afford more RAM.", ":memory:"),
-        (
-            "If it doesn't work, try turning it off and back on again.",
-            ":arrows_counterclockwise:",
-        ),
+        ("If it doesn't work, try turning it off and back on again.", ":arrows_counterclockwise:"),
         ("Bleeding edge means bleeding out.", ":drop_of_blood:"),
         
         # --- LOGIC, CS THEORY & GENERAL (50) ---
