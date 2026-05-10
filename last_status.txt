@@ -1,1 +1,1 @@
-Boy, have you lost your mind? Cause I’ll help you find it!
+Law of Demeter: Only talk to your friends.
