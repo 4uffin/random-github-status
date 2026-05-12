@@ -1,1 +1,1 @@
-rm -rf /bin/worries
+Talk is cheap. Show me the code.
