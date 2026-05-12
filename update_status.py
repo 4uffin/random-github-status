@@ -142,6 +142,10 @@ def update_github_status():
         ("Hello World!", ":earth_americas:"),
         ("Don't repeat yourself (DRY)", ":droplet:"),
         ("Refactoring for the soul", ":hammer_and_wrench:"),
+        ("just setting up my twttr", ""),
+        ("just setting up my twttr", ":bird:"),
+        ("just setting up my twttr - @jack", ""),
+        ("just setting up my twttr - @jack", ":bird:"),
         
         # --- THE OFFICE US (50) ---
         ("I’m not superstitious, but I am a little stitious.", ":black_currant:"),
