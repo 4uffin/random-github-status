@@ -1,1 +1,1 @@
-Dependency injection for loose coupling.
+Save Bandit!
