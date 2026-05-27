@@ -1,1 +1,1 @@
-First, solve the problem. Then, write the code.
+Two hard things in CS: cache invalidation and naming things.
