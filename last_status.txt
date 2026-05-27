@@ -1,1 +1,1 @@
-Two hard things in CS: cache invalidation and naming things.
+O(n log n) is efficient enough.
