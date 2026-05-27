@@ -1,1 +1,1 @@
-O(n log n) is efficient enough.
+I am running away from my responsibilities. And it feels good.
