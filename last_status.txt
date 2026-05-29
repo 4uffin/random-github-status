@@ -1,1 +1,1 @@
-Turing complete
+Say 'hello' to my little friend!
