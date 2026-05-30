@@ -1,1 +1,1 @@
-Prepare for unforeseen consequences.
+chmod +x success.sh
