@@ -1,1 +1,1 @@
-chmod +x success.sh
+You can't just shoot a hole into the surface of Mars.
