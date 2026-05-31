@@ -1,1 +1,1 @@
-RTFM
+Abstractions all the way down
