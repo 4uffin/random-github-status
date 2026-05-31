@@ -1,1 +1,1 @@
-Big O: O(1) is the dream
+If it's not in Git, it doesn't exist.
