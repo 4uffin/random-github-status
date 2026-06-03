@@ -1,1 +1,1 @@
-Idempotency: Do it again, same result.
+Dark mode is the only mode
