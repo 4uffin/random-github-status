@@ -1,1 +1,1 @@
-O(n log n) is efficient enough.
+↑ ↑ ↓ ↓ ← → ← → B A
