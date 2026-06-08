@@ -1,1 +1,1 @@
-Re-seating the RAM usually works.
+The project will be finished as soon as we stop adding features.
