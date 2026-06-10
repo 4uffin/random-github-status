@@ -1,1 +1,1 @@
-Experience is the name everyone gives to their mistakes.
+X11 is the past, Wayland is the future (eventually).
