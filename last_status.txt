@@ -1,1 +1,1 @@
-I'm not procrastinating, I'm asynchronously processing.
+X11 is the past, Wayland is the future (eventually).
