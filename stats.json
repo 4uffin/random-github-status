@@ -1,11 +1,16 @@
 {
-    "total_attempts": 566,
-    "success_count": 566,
+    "total_attempts": 567,
+    "success_count": 567,
     "failure_count": 0,
     "error_rate_percent": "0.0%",
-    "last_run": "2026-06-22 12:21:32 UTC",
+    "last_run": "2026-06-22 17:44:50 UTC",
     "last_error": "None",
     "history": [
+        {
+            "time": "2026-06-22 17:44:50 UTC",
+            "status": "Sudo !!",
+            "emoji": ":zap:"
+        },
         {
             "time": "2026-06-22 12:21:32 UTC",
             "status": "I ground up some aspirin and put it in his food.",
@@ -75,11 +80,6 @@
             "time": "2026-06-20 18:20:00 UTC",
             "status": "Do or do not. There is no try.",
             "emoji": ":crossed_swords:"
-        },
-        {
-            "time": "2026-06-20 16:26:20 UTC",
-            "status": " ",
-            "emoji": ":pager:"
         }
     ],
     "status_pool_count": 389
