@@ -1,1 +1,1 @@
-Boolean logic: True or False?
+Legacy code is code that works.
