@@ -1,1 +1,1 @@
-Legacy code is code that works.
+JSON is my love language
