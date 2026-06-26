@@ -1,1 +1,1 @@
-A SQL query walks into a bar and asks... 'Can I join you?'
+grep -r 'meaning_of_life' /dev/null
