@@ -1,1 +1,1 @@
-4GB of VRAM is enough for anyone... probably.
+The project will be finished as soon as we stop adding features.
