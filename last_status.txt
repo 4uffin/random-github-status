@@ -1,1 +1,1 @@
-Git commit -m 'Fixed everything'
+Law of Demeter: Only talk to your friends.
