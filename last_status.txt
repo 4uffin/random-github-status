@@ -1,1 +1,1 @@
-Do or do not. There is no try.
+Big O: O(1) is the dream
