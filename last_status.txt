@@ -1,1 +1,1 @@
-Parkour!
+Big O: O(1) is the dream
