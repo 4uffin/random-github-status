@@ -1,1 +1,1 @@
-Fixing the fix that broke the fix.
+Re-seating the RAM usually works.
