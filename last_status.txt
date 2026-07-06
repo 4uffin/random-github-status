@@ -1,1 +1,1 @@
-JSON is my love language
+Premature optimization is the root of all evil.
