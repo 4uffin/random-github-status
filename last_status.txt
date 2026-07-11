@@ -1,1 +1,1 @@
-If it doesn't work, try turning it off and back on again.
+Systemd: Love it or leave it.
