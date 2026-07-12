@@ -1,1 +1,1 @@
-The hardware works. The software is broken.
+If it isn't broken, you haven't added enough features yet.
