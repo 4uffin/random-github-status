@@ -1,1 +1,1 @@
-E.T. phone home.
+Concurrency is not parallelism.
