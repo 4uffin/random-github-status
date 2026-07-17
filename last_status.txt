@@ -1,1 +1,1 @@
-Concurrency is not parallelism.
+A man chooses, a slave obeys.
