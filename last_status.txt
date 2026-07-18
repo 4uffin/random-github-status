@@ -1,1 +1,1 @@
- 
+Premature abstraction is a trap.
