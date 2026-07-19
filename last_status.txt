@@ -1,1 +1,1 @@
-Carpe diem. Seize the day, boys.
+O(n log n) is efficient enough.
