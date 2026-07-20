@@ -1,1 +1,1 @@
-I have a bad feeling about this
+Comments should explain 'why', not 'what'.
