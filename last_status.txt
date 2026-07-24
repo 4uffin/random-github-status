@@ -1,1 +1,1 @@
-rm -rf /bin/worries
+Stay awhile and listen.
