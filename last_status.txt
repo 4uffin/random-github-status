@@ -1,1 +1,1 @@
-Identity theft is not a joke, Jim!
+rm -rf /bin/worries
