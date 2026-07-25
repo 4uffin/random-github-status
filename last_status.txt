@@ -1,1 +1,1 @@
-Premature optimization is the root of all evil.
+The best code is the code you can delete.
