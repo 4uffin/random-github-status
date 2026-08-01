@@ -1,1 +1,1 @@
-If it's not in Git, it doesn't exist.
+ZFS is not a filesystem, it’s a religion.
