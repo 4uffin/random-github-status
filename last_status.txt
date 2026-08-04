@@ -1,1 +1,1 @@
-Syntactic sugar
+The project will be finished as soon as we stop adding features.
