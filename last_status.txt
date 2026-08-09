@@ -1,1 +1,1 @@
-Occam's Razor: Simplest is usually right.
+Systemd: Love it or leave it.
