@@ -1,1 +1,1 @@
-Non-deterministic behavior detected.
+State is the enemy of understanding.
