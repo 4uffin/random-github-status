@@ -1,1 +1,1 @@
-I declare bankruptcy!
+Floating point precision is a myth
