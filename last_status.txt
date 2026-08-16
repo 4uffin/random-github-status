@@ -1,1 +1,1 @@
-git commit -m 'fixed bugs by creating new ones'
+Java is to JavaScript what car is to carpet.
