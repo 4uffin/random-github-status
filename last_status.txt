@@ -1,1 +1,1 @@
-Number one: Inverted file system.
+Vim is easy to enter, impossible to leave.
