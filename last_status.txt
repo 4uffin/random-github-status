@@ -1,1 +1,1 @@
-Boy!
+rm -rf /bin/worries
