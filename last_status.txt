@@ -1,1 +1,1 @@
-Kernel panic
+Everything is an object
