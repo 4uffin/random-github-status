@@ -1,1 +1,1 @@
-Boolean logic: True or False?
+VRAM management is a full-time job
