@@ -1,1 +1,1 @@
-A monad is just a monoid in the category of endofunctors.
+It's not a bug, it's a feature.
