@@ -1,1 +1,1 @@
-Every bug was once a feature request.
+Systemd: Love it or leave it.
