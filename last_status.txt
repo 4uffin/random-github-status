@@ -1,1 +1,1 @@
-Overclocked and thermal throttling
+System.gc();
