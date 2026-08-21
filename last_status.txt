@@ -1,1 +1,1 @@
-Magic smoke containment specialist
+Don't repeat yourself (DRY)
