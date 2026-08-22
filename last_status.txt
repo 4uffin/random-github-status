@@ -1,1 +1,1 @@
-I'm fast. Somewhere between a snake and a mongoose.
+Premature abstraction is a trap.
