@@ -1,1 +1,1 @@
-Dial-up noises intensifying
+X11 is the past, Wayland is the future (eventually).
