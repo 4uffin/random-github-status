@@ -1,1 +1,1 @@
-Concurrency is not parallelism.
+Vim is a way of life
