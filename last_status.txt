@@ -1,1 +1,1 @@
-Functional programming for purity
+Dark mode is the only mode
