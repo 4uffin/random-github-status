@@ -1,1 +1,1 @@
-Pythonic by design
+Idempotency: Do it again, same result.
