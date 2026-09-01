@@ -1,1 +1,1 @@
-Segmentation fault (core dumped)
+Man pages are my only friends.
