@@ -1,1 +1,1 @@
-Testing leads to failure, and failure leads to understanding.
+4GB of VRAM is enough for anyone... probably.
