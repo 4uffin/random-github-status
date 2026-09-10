@@ -1,1 +1,1 @@
-If it's not in Git, it doesn't exist.
+If it isn't broken, you haven't added enough features yet.
