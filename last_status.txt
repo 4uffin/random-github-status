@@ -1,1 +1,1 @@
-Recursion: See status for details
+Side effects: Use only as directed.
