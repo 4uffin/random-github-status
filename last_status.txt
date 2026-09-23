@@ -1,1 +1,1 @@
-Law of Demeter: Only talk to your friends.
+All your base are belong to us
