@@ -1,1 +1,1 @@
-Refactoring for the soul
+Law of Demeter: Only talk to your friends.
