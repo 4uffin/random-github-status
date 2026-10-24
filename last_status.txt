@@ -1,1 +1,1 @@
-Dependency injection for loose coupling.
+Junior devs solve problems with code. Senior devs solve problems by deleting it.
