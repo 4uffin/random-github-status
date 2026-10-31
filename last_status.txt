@@ -1,1 +1,1 @@
-Great Scott!
+Concurrency is not parallelism.
