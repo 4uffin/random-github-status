@@ -1,1 +1,1 @@
-Big O: O(1) is the dream
+The cloud is just someone else's computer.
