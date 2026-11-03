@@ -1,1 +1,1 @@
-Minty fresh desktop environment
+Big O: O(1) is the dream
