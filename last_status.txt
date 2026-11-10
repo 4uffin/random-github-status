@@ -1,1 +1,1 @@
-↑ ↑ ↓ ↓ ← → ← → B A
+The hardware works. The software is broken.
