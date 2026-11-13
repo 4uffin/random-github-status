@@ -1,1 +1,1 @@
-It's a driver issue.
+Two hard things in CS: cache invalidation and naming things.
